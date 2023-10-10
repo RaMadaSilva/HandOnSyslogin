@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 using JWTStore.Core.SharedContext.Extentions;
 using JWTStore.Core.SharedContext.ValueObjects;
@@ -35,6 +32,5 @@ namespace JWTStore.Core.AcountContext.ValeuObjects
 
         public static implicit operator Email(string Adress)
             => new Email(Adress);
-
     }
 }
