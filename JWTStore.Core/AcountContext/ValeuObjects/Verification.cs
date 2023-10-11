@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JWTStore.Core.SharedContext.ValueObjects;
 
 namespace JWTStore.Core.AcountContext.ValeuObjects
 {
-    public class Verification
+    public class Verification : ValeuObject
     {
         public string Code { get; } = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 6).ToUpper();
         public DateTime? ExpireAt { get; private set; } = DateTime.UtcNow.AddMinutes(5);

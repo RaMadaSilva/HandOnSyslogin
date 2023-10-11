@@ -1,3 +1,4 @@
+using System.Security;
 using System.Text.RegularExpressions;
 using JWTStore.Core.SharedContext.Extentions;
 using JWTStore.Core.SharedContext.ValueObjects;
@@ -23,6 +24,10 @@ namespace JWTStore.Core.AcountContext.ValeuObjects
         }
         public string Adress { get; }
         public string Hash => Adress.ToBase64();
+        public Verification Verification { get; private set; } = new();
+
+        public void ResendVerification()
+            => Verification = new Verification();
 
         [GeneratedRegex(Pattern)]
         private static partial Regex EmailRegex();
